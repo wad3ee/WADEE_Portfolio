@@ -172,6 +172,9 @@ revealElements.forEach(function (element) {
 /* =========================================
    CONTACT FORM VALIDATION
    ========================================= */
+    /* =========================================
+   CONTACT FORM VALIDATION
+   ========================================= */
 
 const contactForm = document.querySelector("#contact form");
 
@@ -192,8 +195,6 @@ if (contactForm) {
 
     contactForm.addEventListener("submit", function (event) {
 
-        event.preventDefault();
-
         const name = nameInput.value.trim();
         const email = emailInput.value.trim();
         const subject = subjectInput.value.trim();
@@ -203,49 +204,66 @@ if (contactForm) {
 
 
         if (name === "") {
+            event.preventDefault();
+
             showFormError("Please enter your name.");
             nameInput.focus();
+
             return;
         }
 
 
         if (!email.includes("@") || !email.includes(".")) {
+            event.preventDefault();
+
             showFormError("Please enter a valid email address.");
             emailInput.focus();
+
             return;
         }
 
 
         if (subject === "") {
+            event.preventDefault();
+
             showFormError("Please enter a subject.");
             subjectInput.focus();
+
             return;
         }
 
 
         if (message.length < 10) {
-            showFormError("Message must contain at least 10 characters.");
+            event.preventDefault();
+
+            showFormError(
+                "Message must contain at least 10 characters."
+            );
+
             messageInput.focus();
+
             return;
         }
 
-
-        formMessage.textContent =
-            "Message validated successfully. Thank you for contacting me!";
-
-        formMessage.classList.add("success");
-
-        contactForm.reset();
+        /*
+         * Validation passed.
+         * Do not call preventDefault().
+         * The browser will submit the form to Formspree.
+         */
 
     });
 
 
     function showFormError(message) {
+
         formMessage.textContent = message;
+
         formMessage.classList.add("error");
     }
 
 }
+
+   
 /* =========================================
    TYPING EFFECT
    ========================================= */
