@@ -1,0 +1,212 @@
+/* =========================================
+   BOUNCE 02 — LANGUAGE SWITCHER
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    transition:
+        direction 0.3s ease;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #172554 0%,
+            #0a0f1a 45%,
+            #020617 100%
+        );
+
+    color: #f8fafc;
+}
+
+.language-switcher {
+    width: min(100%, 700px);
+
+    padding: 45px;
+
+    background: rgba(21, 30, 46, 0.92);
+
+    border: 1px solid #263244;
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45);
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.language-switcher:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.language-switcher header {
+    margin-bottom: 30px;
+}
+
+#eyebrow {
+    margin-bottom: 10px;
+
+    color: #38bdf8;
+
+    font-size: 0.8rem;
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+#title {
+    margin-bottom: 14px;
+
+    font-size: clamp(2rem, 5vw, 3.5rem);
+
+    font-weight: 800;
+}
+
+#description {
+    color: #94a3b8;
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CONTENT CARD
+   ========================================= */
+
+.content-card {
+    padding: 30px;
+
+    background: #111827;
+
+    border: 1px solid #263244;
+    border-radius: 18px;
+}
+
+#welcome {
+    margin-bottom: 15px;
+
+    font-size: 1.5rem;
+}
+
+#text {
+    margin-bottom: 25px;
+
+    color: #94a3b8;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   LANGUAGE BUTTON
+   ========================================= */
+
+#language-toggle {
+    min-width: 130px;
+
+    padding: 13px 24px;
+
+    border: 1px solid #38bdf8;
+    border-radius: 10px;
+
+    background: #38bdf8;
+    color: #0a0f1a;
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#language-toggle:hover {
+    background: #0ea5e9;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(56, 189, 248, 0.25);
+}
+
+#language-toggle:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================
+   RTL SUPPORT
+   ========================================= */
+
+html[dir="rtl"] .language-switcher {
+    text-align: right;
+}
+
+html[dir="rtl"] #language-toggle {
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 18px;
+    }
+
+    .language-switcher {
+        padding: 30px 22px;
+    }
+
+    .content-card {
+        padding: 22px;
+    }
+
+    #title {
+        font-size: 2rem;
+    }
+
+    #description,
+    #text {
+        font-size: 0.95rem;
+    }
+
+    #language-toggle {
+        width: 100%;
+    }
+}
