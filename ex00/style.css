@@ -1,0 +1,927 @@
+/* ========================================
+   WADEE PORTFOLIO
+   Professional Cybersecurity Theme
+   ======================================== */
+
+
+/* ---------- CSS Variables ---------- */
+
+:root {
+    --bg-primary: #0a0f1a;
+    --bg-secondary: #111827;
+    --bg-card: #151e2e;
+
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+
+    --accent: #38bdf8;
+    --accent-hover: #0ea5e9;
+
+    --border: #263244;
+
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    --max-width: 1200px;
+
+    --radius: 14px;
+
+    --transition: 0.3s ease;
+}
+
+
+/* ---------- Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+
+/* ---------- Global Elements ---------- */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+p {
+    color: var(--text-secondary);
+}
+
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+
+section {
+    width: min(100% - 40px, var(--max-width));
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+
+/* ---------- Header ---------- */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(10, 15, 26, 0.92);
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(10px);
+}
+
+
+header nav {
+    width: min(100% - 40px, var(--max-width));
+    min-height: 75px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+header nav > a {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--accent);
+
+    transition: var(--transition);
+}
+
+
+header nav > a:hover {
+    color: var(--text-primary);
+}
+
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+
+header nav ul a {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+
+header nav ul a:hover {
+    color: var(--accent);
+}
+
+
+/* ---------- Hero ---------- */
+
+#home {
+    min-height: calc(100vh - 75px);
+
+    display: flex;
+    align-items: center;
+}
+
+
+#home > div {
+    max-width: 800px;
+}
+
+
+#home p:first-child {
+    margin-bottom: 20px;
+
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+#home h1 {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+    white-space: normal;
+}
+
+#home p:nth-of-type(2) {
+    max-width: 700px;
+    margin-bottom: 35px;
+
+    font-size: 1.15rem;
+}
+
+
+#home a {
+    display: inline-block;
+
+    margin-right: 12px;
+    margin-bottom: 12px;
+
+    padding: 12px 22px;
+
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    transition: var(--transition);
+}
+
+
+#home a:first-of-type {
+    background: var(--accent);
+    color: #06111a;
+}
+
+
+#home a:first-of-type:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+
+#home a:last-of-type {
+    color: var(--accent);
+}
+
+
+#home a:last-of-type:hover {
+    background: var(--accent);
+    color: #06111a;
+    transform: translateY(-2px);
+}
+
+
+/* ---------- Section Headings ---------- */
+
+section > p:first-child {
+    margin-bottom: 8px;
+
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+
+section > h2 {
+    margin-bottom: 50px;
+
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+
+/* ---------- About ---------- */
+
+#about > div {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+
+#about img {
+    width: 320px;
+    height: 320px;
+
+    object-fit: cover;
+
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.15);
+}
+
+
+#about > div > div {
+    flex: 1;
+}
+
+
+#about > div > div > p {
+    margin-bottom: 18px;
+}
+
+
+#about h2 {
+    margin-bottom: 25px;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+
+/* ---------- Skills ---------- */
+
+#skills > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+#skills article {
+    padding: 30px;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+}
+
+
+#skills article:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+
+#skills h3 {
+    margin-bottom: 20px;
+    color: var(--accent);
+    font-size: 1.3rem;
+}
+
+
+#skills li {
+    padding: 8px 0;
+
+    color: var(--text-secondary);
+
+    border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+
+#skills li:last-child {
+    border-bottom: none;
+}
+
+
+/* ---------- Projects ---------- */
+
+#projects > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+#projects article {
+    padding: 30px;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+}
+
+
+#projects article:hover {
+    border-color: var(--accent);
+    transform: translateY(-6px);
+}
+
+
+#projects h3 {
+    margin-bottom: 18px;
+
+    color: var(--text-primary);
+    font-size: 1.2rem;
+}
+
+
+#projects p {
+    margin-bottom: 15px;
+}
+
+
+#projects p:last-child {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+
+/* ---------- Hobbies ---------- */
+
+#hobbies > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+#hobbies article {
+    padding: 30px;
+
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    transition: var(--transition);
+}
+
+
+#hobbies article:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+
+#hobbies h3 {
+    margin-bottom: 12px;
+    color: var(--accent);
+}
+
+
+/* ---------- Contact ---------- */
+
+#contact > p {
+    max-width: 700px;
+    margin-bottom: 35px;
+}
+
+
+#contact form {
+    max-width: 750px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+#contact form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+#contact label {
+    font-weight: 700;
+}
+
+
+#contact input,
+#contact textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    font: inherit;
+    color: var(--text-primary);
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    outline: none;
+
+    transition: var(--transition);
+}
+
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+
+
+#contact textarea {
+    resize: vertical;
+}
+
+
+#contact button {
+    width: fit-content;
+
+    padding: 13px 24px;
+
+    font: inherit;
+    font-weight: 700;
+
+    color: #06111a;
+    background: var(--accent);
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+#contact button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid var(--border);
+}
+
+
+footer p {
+    margin-bottom: 15px;
+}
+
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+
+footer nav a {
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+
+footer nav a:hover {
+    color: var(--accent);
+}
+
+
+/* ---------- Responsive Design ---------- */
+
+@media (max-width: 900px) {
+
+    header nav ul {
+        gap: 16px;
+    }
+
+
+    #about > div {
+        gap: 40px;
+    }
+
+
+    #projects > div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    #hobbies > div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    section {
+        width: min(100% - 30px, var(--max-width));
+        padding: 75px 0;
+    }
+
+
+    header nav {
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+
+    #home {
+        min-height: auto;
+        padding-top: 120px;
+    }
+
+
+    #home h1 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+    }
+
+
+    #about > div {
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    #about img {
+        width: 240px;
+        height: 240px;
+    }
+
+
+    #skills > div,
+    #projects > div,
+    #hobbies > div {
+        grid-template-columns: 1fr;
+    }
+
+
+    #contact button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    #home a {
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+    }
+
+
+    footer nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
+/* =========================================
+   THEME SWITCHER
+   ========================================= */
+
+.theme-toggle {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: var(--bg-card);
+    color: var(--text-primary);
+
+    font-size: 1.3rem;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: var(--shadow);
+
+    z-index: 999;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-4px) rotate(15deg);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.theme-toggle:active {
+    transform: scale(0.9);
+}
+
+
+/* =========================================
+   LIGHT THEME
+   ========================================= */
+
+body.light-theme {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #e2e8f0;
+    --bg-card: #ffffff;
+
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+
+    --accent: #0284c7;
+    --accent-hover: #0369a1;
+
+    --border: #cbd5e1;
+
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================================
+   LIGHT THEME — HEADER
+   ========================================= */
+
+body.light-theme header {
+    background: rgba(248, 250, 252, 0.9);
+}
+
+
+/* =========================================
+   LIGHT THEME — BUTTON
+   ========================================= */
+
+body.light-theme .theme-toggle {
+    background: #ffffff;
+}
+
+
+/* =========================================
+   THEME TRANSITION
+   ========================================= */
+
+body,
+header,
+section,
+article,
+input,
+textarea,
+button,
+.theme-toggle {
+    transition:
+        background-color 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+const progressBar = document.createElement("div");
+
+progressBar.id = "scroll-progress";
+
+document.body.prepend(progressBar);
+
+
+function updateScrollProgress() {
+    const scrollTop = window.scrollY;
+
+    const documentHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const scrollPercentage =
+        (scrollTop / documentHeight) * 100;
+
+    progressBar.style.width = `${scrollPercentage}%`;
+}
+
+
+/* =========================================
+   SCROLL PROGRESS BAR
+   ========================================= */
+
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 3px;
+
+    background: var(--accent);
+
+    box-shadow: 0 0 12px var(--accent);
+
+    z-index: 9999;
+
+    transition: width 0.08s linear;
+}
+
+
+/* =========================================
+   ACTIVE NAVIGATION
+   ========================================= */
+
+header nav a.active {
+    color: var(--accent);
+}
+
+header nav a.active::after {
+    width: 100%;
+}
+/* =========================================
+   SCROLL REVEAL
+   ========================================= */
+
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* =========================================
+   FORM VALIDATION MESSAGE
+   ========================================= */
+
+#form-message {
+    margin-top: 15px;
+    min-height: 24px;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+#form-message.error {
+    color: #f87171;
+}
+
+#form-message.success {
+    color: #22c55e;
+}
+/* =========================================
+   MOBILE NAVIGATION
+   ========================================= */
+
+.mobile-menu-toggle {
+    display: none;
+
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-primary);
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 10px;
+
+    font-size: 1.3rem;
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   MOBILE BREAKPOINT
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    header nav {
+        position: relative;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    header nav ul {
+        display: none;
+
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+
+        width: 220px;
+
+        padding: 15px;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+
+        box-shadow: var(--shadow);
+
+        z-index: 1000;
+    }
+
+    header nav ul.mobile-open {
+        display: flex;
+    }
+
+    header nav ul li {
+        width: 100%;
+    }
+
+    header nav ul li a {
+        display: block;
+        width: 100%;
+
+        padding: 12px 14px;
+
+        border-radius: 8px;
+    }
+
+    header nav ul li a:hover {
+        background: var(--bg-secondary);
+    }
+}
